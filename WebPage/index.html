@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcame Capture</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"/>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">
+            Facial Recognition
+        </h1>
+        <form method="POST" action="http://localhost:8080/process.php">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="my_camera"></div>
+                    <br>
+                </div>
+                <div class="col-md-6">
+                    <div id="new-image"></div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <input type="button" value="Take Snapshot" onclick="take_Snapshot()">
+                    </div>
+                    <br>
+                    <div class="row">
+                        <button class="btn btn-primary" value="verify" name="button">Verify User</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="firstname">Enter First Name:</label>
+                        <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Enter Last Name:</label>
+                        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name">
+                    </div>
+                    <button class="btn btn-primary" value="initvalid" name="button">Enter New User</button>
+                </div>
+            </div>
+            
+            <input type="hidden" name="image" class="image-tag" />
+
+        </form>
+    </div>
+</body>
+<script>
+    Webcam.set({
+        width:490,
+        height:380,
+        image_format:'jpeg',
+        jpeg_quality:90
+    });
+
+    Webcam.attach("#my_camera")
+
+    function take_Snapshot() {
+        Webcam.snap(function(data_uri){
+            $(".image-tag").val(data_uri);
+            document.getElementById("new-image").innerHTML = '<img src="' + data_uri + '"/>';
+        });
+    }
+</script>
+</html>
