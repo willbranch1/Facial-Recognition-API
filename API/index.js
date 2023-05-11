@@ -30,7 +30,7 @@ app.post('/verify', function(req, res) {
     const { img } = req.body;
 
     var base64 = img.replace('data:image/jpeg;base64,','');
-    var temp = 'C:/Users/621wa/Documents/FacialRecognition/Photos/temp.jpg'
+    var temp = 'C:/Users/621wa/Documents/Facial-Recognition-API/Photos/temp.jpg'
 
     fs.writeFile(temp, base64, 'base64', function(err) { //Store to be verified photo in a temporary location.
         if (err) throw(err);
@@ -80,7 +80,7 @@ app.post('/initvalid', function(req, res) {
 
     var base64 = img.replace('data:image/jpeg;base64,','');
 
-    filepath = 'C:/Users/621wa/Documents/FacialRecognition/Photos/' + firstname + lastname + '.jpg';
+    filepath = 'C:/Users/621wa/Documents/Facial-Recognition-API/Photos/' + firstname + lastname + '.jpg';
     
     fs.writeFile(filepath, base64, 'base64', function(err) { //Writes image path to file system.
         if (err) {

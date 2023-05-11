@@ -16,7 +16,7 @@ if (isset($_POST['button']) && isset($_POST['image']) && isset($_POST['firstname
     $button = $_POST['button'];
 
     $data = json_encode(array('img' => $img, 'firstname' => $firstname, 'lastname' => $lastname)); //jsonify data so it can be sent to api
-
+    
     //create a curl connect with proper fields to request data from api
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_POST, 1);
@@ -41,6 +41,7 @@ if (isset($_POST['button']) && isset($_POST['image']) && isset($_POST['firstname
             print_r('Successfully initialized ' .$firstname .' ' .$lastname .'.');
         }
     }
+    
 } else {
     print_r('ERROR: POST data sent incorrectly');
 }
