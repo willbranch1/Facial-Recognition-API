@@ -21,3 +21,47 @@ This project demonstrates knowledge and understanding of how APIs operate. It sh
   - The /initvalid post request adds another face to the verified faces in the database. Other information such as the persons name is also inserted.
   - Note: more functions such as the ability to ban a face are in the works.  
 - A simple webpage was created that allows the capture of an image via a webcam. An HTML page handles the image capture and sends the image uri and other data to a PHP page. The image can then be sent to the API through a curl connection. The webpage then waits for a response from the API and prints an output message. 
+
+## Walkthrough
+- Note: all the development was done on a local computer
+1. Open two terminals and navigate to the directory. To start the API, run the command 'node .'. To start the WebServer, run the command 'php -S localhost:8080'.
+<p align="center">
+    <img alt="Terminal Windows" width="75%" src="https://i.imgur.com/Bc9BRjv.png"/>
+    <p align="center">Admin page that is revealed after a user logs in.</p>
+    <br>
+</p>
+2. In a web browser, go to localhost:8080. The image on the left is from your computers webcam.
+<p align="center">
+    <img alt="WebPage Example" width="75%" src="https://i.imgur.com/aBs9L8J.png"/>
+    <br>
+</p>
+3. If the 'Take Snapshot' button is clicked, the image will be displayed to the right. 
+<p align="center">
+    <img alt="Sample Picture" width="75%" src="https://i.imgur.com/UyiWW5k.png"/>
+    <br>
+</p>
+4. If 'Verify User' is clicked, an error message will be returned from the API since the user is not in the verified database. We must first add the user.
+<p align="center">
+    <img alt="API Error" width="75%" src="https://i.imgur.com/BNX9bM5.png"/>
+    <br>
+</p>
+5. On the right side are form boxes for the users name. If those forms are filled and a picture has been taken, The 'Enter New User' button will enter the person into the database.
+<p align="center">
+    <img alt="Enter New User" width="75%" src="https://i.imgur.com/HOELUyL.png"/>
+    <br>
+    <img alt="Initialized" width="75%" src="https://i.imgur.com/ljzO003.png"/>
+    <br>
+</p>
+6. If we then take a new picture and hit 'Verify User', you will see the API returns my name and id from the database since I am now a verified person in the database. 
+<p align="center">
+    <img alt="New Picture" width="75%" src="https://i.imgur.com/vdiatVH.png"/>
+    <br>
+    <img alt="Verified" width="75%" src="https://i.imgur.com/A3pW4Hf.png"/>
+    <br>
+</p>
+
+
+
+
+
+
