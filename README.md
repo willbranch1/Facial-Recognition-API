@@ -24,7 +24,14 @@ This project demonstrates knowledge and understanding of how APIs operate. It sh
 
 ## Walkthrough
 - Note: all the development was done on a local computer
-1. Open two terminals and navigate to the directory. To start the API, run the command 'node .'. To start the WebServer, run the command 'php -S localhost:8080'.
+1. Open two terminals and navigate to the directory. To start the API, run the command 
+```
+node .
+```
+To start the WebServer, run the command 
+```
+php -S localhost:8080
+```
 <p align="center">
     <img alt="Terminal Windows" width="75%" src="https://i.imgur.com/Bc9BRjv.png"/>
     <p align="center">Admin page that is revealed after a user logs in.</p>
